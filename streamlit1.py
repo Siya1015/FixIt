@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Updated providers list with location and contact numbers
+# Service Providers
 providers = [
     {'id': 1, 'name': 'Cherly', 'category': 'Cleaner', 'rating': 4.2, 
      'times': ['08:00 AM', '02:30 PM'], 'location': 'Nellmapis Ext-24', 'contact': '+27712345678'},
@@ -49,7 +49,7 @@ def main():
                 st.session_state.matched_providers = matched
                 st.rerun()
     
-    # Step 1: Provider selection (now with location and contact info)
+    # Step 1: Provider selection 
     elif st.session_state.step == 1:
         st.write(f"Available {st.session_state.booking['category']}s:")
         
@@ -93,7 +93,7 @@ def main():
             st.session_state.step = 1
             st.rerun()
     
-    # Step 3: Payment confirmation (now shows contact info)
+    # Step 3: Payment confirmation
     elif st.session_state.step == 3:
         booking = st.session_state.booking
         provider = booking['provider']
